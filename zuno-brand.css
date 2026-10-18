@@ -1,0 +1,147 @@
+.zuno-logo {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    flex: 0 0 76px;
+    animation: zuno-float 3.4s ease-in-out infinite;
+}
+
+.zuno-logo svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 7px 10px rgba(4, 78, 120, 0.2));
+}
+
+.zuno-bubble {
+    fill: url(#zunoGradient);
+}
+
+.zuno-letter {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 5.5;
+}
+
+.zuno-wave {
+    fill: none;
+    stroke: #a5fff0;
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+.zuno-wave-back {
+    opacity: 0.65;
+    animation: zuno-wave-drift 3s ease-in-out infinite;
+}
+
+.zuno-wave-front {
+    opacity: 0.95;
+    animation: zuno-wave-drift 3s ease-in-out -1.5s infinite;
+}
+
+.zuno-live-dot,
+.zuno-live-label span {
+    display: block;
+    background: #25c982;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(37, 201, 130, 0.48);
+    animation: zuno-live-pulse 1.9s ease-out infinite;
+}
+
+.zuno-live-dot {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    width: 15px;
+    height: 15px;
+}
+
+.zuno-live-label span {
+    width: 7px;
+    height: 7px;
+    border: 0;
+}
+
+.zuno-logo-compact {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+}
+
+.zuno-logo-compact .zuno-live-dot {
+    top: 0;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+}
+
+.zuno-cta {
+    min-height: 62px;
+    padding: 7px 20px 7px 12px;
+    gap: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    color: #064e78;
+}
+
+.zuno-cta:hover {
+    color: #064e78;
+}
+
+.zuno-cta-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.zuno-cta-title {
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.zuno-cta .zuno-live-label {
+    gap: 5px;
+    color: #168052;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+@keyframes zuno-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+@keyframes zuno-wave-drift {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(2px); }
+}
+
+@keyframes zuno-live-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 201, 130, 0.45); }
+    70%, 100% { box-shadow: 0 0 0 6px rgba(37, 201, 130, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .zuno-logo,
+    .zuno-wave,
+    .zuno-live-dot,
+    .zuno-live-label span {
+        animation: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .zuno-logo:not(.zuno-logo-compact) {
+        width: 64px;
+        height: 64px;
+        flex-basis: 64px;
+    }
+}

@@ -27,6 +27,7 @@ Live repo: https://github.com/VISHNUREDDY352/SwimFest
 
 ### Public
 - `index.html` — homepage, live tournament listings
+- `assistant.html` — Ask Zuno, a guided, rules-based chat for public tournament search and links to existing workflows; asks before opening create, registration, and heat-generation tasks. Updates are still reviewed and submitted in the existing pages, and chat messages are not sent to an external AI service.
 - `event.html` — tournament detail (`?tournament=<title>` or `?id=<uuid>`)
 - `register.html` — registration wizard (login required)
 - `search.html` — swimmer directory search

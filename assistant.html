@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Zuno — SwimFest</title>
+    <link rel="stylesheet" href="styles.css?v=21">
+    <link rel="stylesheet" href="zuno-brand.css">
+    <link rel="stylesheet" href="assistant.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="tests/test-id-registry.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fas fa-swimmer"></i> SwimFest</a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#upcoming-tournaments" class="nav-link">Tournaments</a>
+                <a href="heatsheets.html" class="nav-link">Heat Sheets</a>
+                <a href="academy.html" class="nav-link">Academy</a>
+            </nav>
+            <a href="login.html" class="btn-register-login">Register / Login</a>
+        </div>
+    </header>
+
+    <main class="assistant-page">
+        <section class="assistant-panel" aria-labelledby="assistantTitle">
+            <header class="assistant-heading">
+                <div class="zuno-logo" aria-hidden="true">
+                    <svg viewBox="0 0 80 80" focusable="false">
+                        <defs>
+                            <linearGradient id="zunoGradient" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#064e78"></stop>
+                                <stop offset="1" stop-color="#08a9c7"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path class="zuno-bubble" d="M18 8h44a12 12 0 0 1 12 12v31a12 12 0 0 1-12 12H43L27 74v-11h-9A12 12 0 0 1 6 51V20A12 12 0 0 1 18 8Z"></path>
+                        <path class="zuno-letter" d="M25 23h31L25 47h31"></path>
+                        <path class="zuno-wave zuno-wave-back" d="M17 53c5-4 10-4 15 0s10 4 15 0 10-4 15 0"></path>
+                        <path class="zuno-wave zuno-wave-front" d="M17 59c5-4 10-4 15 0s10 4 15 0 10-4 15 0"></path>
+                    </svg>
+                    <span class="zuno-live-dot"></span>
+                </div>
+                <div class="zuno-heading-copy">
+                    <div class="zuno-brand-line">
+                        <p class="assistant-eyebrow">SWIMFEST AI</p>
+                        <span class="zuno-live-label"><span></span> READY</span>
+                    </div>
+                    <h1 id="assistantTitle">Ask <span>Zuno</span></h1>
+                    <p>Find meets, look up swimmer resources, or get to tournament tools.</p>
+                </div>
+            </header>
+
+            <div class="assistant-notice">
+                <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                <p>This guided assistant searches public tournament listings and opens SwimFest workflows. It asks before continuing to create, register, or heat-publishing tasks. You review and submit changes in the existing workflow; messages stay in this browser and are not sent to an AI service.</p>
+            </div>
+
+            <div class="assistant-suggestions" aria-label="Suggested questions">
+                <button type="button" data-prompt="Find upcoming tournaments">Find tournaments</button>
+                <button type="button" data-prompt="How do I create a tournament?">Create a tournament</button>
+                <button type="button" data-prompt="I need to generate heats">Generate heats</button>
+                <button type="button" data-prompt="Show me swimmer search">Find a swimmer</button>
+            </div>
+
+            <div class="assistant-messages" id="assistantMessages" role="log" aria-live="polite" aria-relevant="additions">
+                <article class="assistant-message assistant-message-bot">
+                    <p>Hi! I can search for tournaments by name, city, venue, or state, and help you reach tools for registration, event setup, heat sheets, swimmer search, and more. What would you like to do?</p>
+                </article>
+            </div>
+
+            <form class="assistant-composer" id="assistantForm">
+                <label class="visually-hidden" for="assistantInput">Message the SwimFest assistant</label>
+                <input id="assistantInput" name="message" type="text" maxlength="300" autocomplete="off" placeholder="Ask about tournaments, heats, registration…" required>
+                <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane" aria-hidden="true"></i><span>Send</span></button>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="assistant.js"></script>
+</body>
+</html>
